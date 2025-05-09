@@ -3,6 +3,8 @@ version: "2"
 run:
   timeout: 5m
   modules-download-mode: readonly
+  tests: false
+  go: '1.24'
 
 linters:
   enable:

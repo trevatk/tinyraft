@@ -1,10 +1,15 @@
-name: build
+
+name: Aquasecurity Trivy
+
 on:
   pull_request:
+    branches:
+      - master
+
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-20.04
+  scan:
+    name: Scan
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout code
       uses: actions/checkout@v4

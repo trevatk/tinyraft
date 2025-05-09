@@ -1,0 +1,14 @@
+
+format: table
+exit-code: 1
+
+severity: 
+  - UNKNOWN
+  - LOW
+  - MEDIUM
+  - HIGH
+  - CRITICAL
+
+scan:
+  security-checks:
+    - vuln

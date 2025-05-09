@@ -1,6 +1,12 @@
 
 lint:
-	golangci-lint run ./...
+	golangci-lint run
+
+test:
+	go test ./...
+
+test_coverage:
+	go test ./... -coverprofile=coverage.out
 
 bootstrap:
 	export NODE_ID="00000000-0000-0000-0000-000000000000"
@@ -31,9 +37,9 @@ node2:
 	go run examples/raft.go
 
 nonvoter:
-    go run examples/raft.go
+	go run examples/raft.go
 
 protos:
 	protoc --go_out=. --go_opt=paths=source_relative \
-    --go-grpc_out=. --go-grpc_opt=paths=source_relative \
-    protos/raft/v1/raft_service.proto
+		--go-grpc_out=. --go-grpc_opt=paths=source_relative \
+		protos/raft/v1/raft_service.proto
